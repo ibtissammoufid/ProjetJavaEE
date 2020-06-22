@@ -6,7 +6,7 @@
 <h:head>
 	<meta charset="utf-8" />
 	<title>
-		Gestion Ventes | Ajouter un utilisateur
+		Add User
 	</title>
 	<meta name="description" content="Latest updates and statistic charts" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -59,7 +59,7 @@
 						<div class="d-flex align-items-center">
 							<div class="mr-auto">
 								<h3 class="m-subheader__title m-subheader__title--separator">
-									Utilisateurs
+									Users
 								</h3>
 								<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 									<li class="m-nav__item m-nav__item--home">
@@ -79,7 +79,7 @@
 								<div class="m-portlet__head-caption">
 									<div class="m-portlet__head-title">
 										<h3 class="m-portlet__head-text">
-											Ajouter un nouveau Utilisateur
+											Add a new user
 										</h3>
 									</div>
 								</div>
@@ -93,7 +93,7 @@
 												<i class="la la-warning"></i>
 											</div>
 											<div class="m-alert__text">
-												Vous devez remplire tous les champs oblogatoire!
+												You have to fill in all the fields!!
 											</div>
 											<div class="m-alert__close">
 												<button type="button" class="close" data-close="alert" aria-label="Close"></button>
@@ -103,13 +103,13 @@
 										<h:panelGroup rendered="#{ajoutUtilisateur.addSuccess}">
 											<div class="alert alert-success alert-dismissible fade show" role="alert">
 												<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-												Vous avez Ajouté cet utilisateur avec succès.
+												User added successfully.
 											</div>
 										</h:panelGroup>
 									</div>
 									<div class="form-group m-form__group row">
 										<label class="col-form-label col-lg-3 col-sm-12">
-											Nom *
+											Last Name *
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<h:inputText type="text" class="form-control m-input" id="nom_user" pt:placeholder="entrer le nom" pt:data-toggle="m-tooltip"
@@ -118,7 +118,7 @@
 									</div>
 									<div class="form-group m-form__group row">
 										<label class="col-form-label col-lg-3 col-sm-12">
-											Prenom *
+											First Name *
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<h:inputText class="form-control m-input" id="prenom_user" pt:placeholder="enter le prénom" pt:data-toggle="m-tooltip" pt:title="Champ Obligatoire"
@@ -136,7 +136,7 @@
 									</div>
 									<div class="form-group m-form__group row">
 										<label class="col-form-label col-lg-3 col-sm-12">
-											Mot de passe *
+											Password *
 										</label>
 										<div class="col-lg-4 col-md-9 col-sm-12">
 											<h:inputText class="form-control m-input" id="password_user" pt:type="password" pt:placeholder="enter le mot de passe" pt:data-toggle="m-tooltip"
@@ -148,9 +148,9 @@
 									<div class="m-form__actions m-form__actions">
 										<div class="row">
 											<div class="col-lg-9 ml-lg-auto">
-												<h:commandButton type="submit" class="btn btn-success" value="Ajouter" action="#{ajoutUtilisateur.addUsreAction}" update="@form"
+												<h:commandButton type="submit" class="btn btn-success" value="Add" action="#{ajoutUtilisateur.addUsreAction}" update="@form"
 												 render="@form" />
-												<a href="index.xhtml" class="btn btn-secondary">Annuler</a>
+												<a href="index.xhtml" class="btn btn-secondary">Cancel</a>
 											</div>
 										</div>
 									</div>
