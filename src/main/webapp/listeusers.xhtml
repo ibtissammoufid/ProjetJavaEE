@@ -7,7 +7,7 @@
 <h:head>
 	<meta charset="utf-8" />
 	<title>
-		Gestion Ventes | Liste Articles
+		Users List
 	</title>
 	<meta name="description" content="Latest updates and statistic charts" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -106,7 +106,7 @@
 												<span>
 													<i class="la la-cart-plus"></i>
 													<span>
-														Nouveau Utilisateur
+														New User
 													</span>
 												</span>
 											</a>
@@ -118,13 +118,13 @@
 								<h:panelGroup rendered="#{listeArticlesAction.showSuccess}">
 									<div class="alert alert-success alert-dismissible show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-										Vous avez Modifié cet utilisateur avec succès.
+										You have modified this user successfully.
 									</div>
 								</h:panelGroup>
 								<h:panelGroup rendered="#{listeArticlesAction.showdeleteSuccess}">
 									<div class="alert alert-success alert-dismissible show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-										Vous avez Supprimé cet utilisateur avec succès.
+										You have deleted this user successfully.
 									</div>
 								</h:panelGroup>
 								<!--begin: Datatable -->
@@ -134,12 +134,12 @@
 										#{utilisateur.code}
 									</h:column>
 									<h:column>
-										<f:facet name="header">Nom</f:facet>
+										<f:facet name="header">Last Name</f:facet>
 										<h:inputText value="#{listeUsersAction.editUtilisateur.nom}" rendered="#{utilisateur.editable}" />
 										<h:outputText value="#{utilisateur.nom}" rendered="#{not utilisateur.editable}" />
 									</h:column>
 									<h:column>
-										<f:facet name="header">Prenom</f:facet>
+										<f:facet name="header">First Name</f:facet>
 										<h:inputText value="#{listeUsersAction.editUtilisateur.prenom}" rendered="#{utilisateur.editable}" />
 										<h:outputText value="#{utilisateur.prenom}" rendered="#{not utilisateur.editable}" />
 									</h:column>
@@ -149,7 +149,7 @@
 										<h:outputText value="#{utilisateur.login}" rendered="#{not utilisateur.editable}" />
 									</h:column>
 									<h:column>
-										<f:facet name="header" style="text-align:center;">Modifier</f:facet>
+										<f:facet name="header" style="text-align:center;">Modify</f:facet>
 
 										<h:commandLink styleClass="btn btn-warning m-btn m-btn--icon btn-sm m-btn--icon-only" pt:data-target="#userEditModal" pt:data-toggle="modal"
 										 action="#{listeUsersAction.setModal}">
@@ -159,7 +159,7 @@
 										</h:commandLink>
 									</h:column>
 									<h:column>
-										<f:facet name="header"> Supprimer</f:facet>
+										<f:facet name="header"> Delete</f:facet>
 										<h:commandLink styleClass="btn btn-danger m-btn m-btn--icon btn-sm m-btn--icon-only" onclick="return confirm('Voulez-vous vraiment supprimer cet article?');"
 										 action="#{listeUsersAction.supprimerUtilisateur}" rendered="#{not utilisateur.editable}" update=":liste_users">
 											<i class="la la-trash-o"></i>
@@ -190,7 +190,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">
-							Modifier l'utilisateur
+							Modify User
 						</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">
@@ -202,14 +202,14 @@
 
 						<div class="form-group">
 							<label for="edit_user_name" class="form-control-label">
-								Nom:
+								Last Name:
 							</label>
 							<h:inputText type="text" class="form-control m-input" id="edit_user_name" value="#{listeUsersAction.editUserNom}" autocomplete="off"
 							/>
 						</div>
 						<div class="form-group">
 							<label for="edit_user_prenom m-input" class="form-control-label">
-								Prenom:
+								First Name:
 							</label>
 							<h:inputText class="form-control m-input" id="edit_user_prenom" value="#{listeUsersAction.editUserPrenom}" autocomplete="off" />
 						</div>
@@ -222,25 +222,25 @@
 						</div>
 						<div class="form-group">
 							<label for="edit_user_passowrd" class="form-control-label">
-								Mot de passe:
+								Password:
 							</label>
 							<h:inputText pt:type="password" class="form-control m-input" id="edit_user_passowrd" value="#{listeUsersAction.editUserPassword}"
 							 autocomplete="off" />
 						</div>
 						<div class="form-group">
 							<label for="edit_user_passowrd" class="form-control-label">
-								Confirmer mot de passe:
+								Confirm password:
 							</label>
 							<h:inputText pt:type="password" class="form-control m-input" id="edit_user_confirm_passowrd" value="#{listeUsersAction.editPassword}"
 							 autocomplete="off" />
 							<div class="form-control-feedback" id="form_feedback" style="display:none;">
-								Non identiques!
+								Non identical!
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">
-							Annuler
+							Cancel
 						</button>
 						<h:commandButton value="Modifier" class="btn btn-primary" action="#{listeUsersAction.modifierUtilisateur}">
 							<f:ajax onevent="aFunction" render="@form" execute="@form"/>
@@ -270,7 +270,7 @@
 	</script>
 	<script type="text/javascript">
 		function confirmDelete() {
-			return confirm('Voulez vous vraiment supprimer cet utilisateur?');
+			return confirm('Are you sure you want to delete this user?');
 		}
 	</script>
 	<script>

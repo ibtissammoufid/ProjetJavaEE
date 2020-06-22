@@ -8,7 +8,7 @@
 <h:head>
 	<meta charset="utf-8" />
 	<title>
-		Gestion Ventes | Liste Articles
+		Items List
 	</title>
 	<meta name="description" content="Latest updates and statistic charts" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -60,7 +60,7 @@
 					<div class="d-flex align-items-center">
 						<div class="mr-auto">
 							<h3 class="m-subheader__title m-subheader__title--separator">
-								Articles
+								Items
 							</h3>
 							<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
 								<li class="m-nav__item m-nav__item--home">
@@ -80,7 +80,7 @@
 								<div class="m-portlet__head-caption">
 									<div class="m-portlet__head-title">
 										<h3 class="m-portlet__head-text">
-											Liste des Articles
+											Items List
 										</h3>
 									</div>
 								</div>
@@ -107,7 +107,7 @@
 												<span>
 													<i class="la la-cart-plus"></i>
 													<span>
-														Nouveau Article
+														New Item
 													</span>
 												</span>
 											</a>
@@ -119,13 +119,13 @@
 								<h:panelGroup rendered="#{listeArticlesAction.showSuccess}">
 									<div class="alert alert-success alert-dismissible show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-										Vous avez Modifié cet article avec succès.
+										You have modified this item successfully.
 									</div>
 								</h:panelGroup>
 								<h:panelGroup rendered="#{listeArticlesAction.showdeleteSuccess}">
 									<div class="alert alert-success alert-dismissible show" role="alert">
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
-										Vous avez Supprimé cet article avec succès.
+										You have deleted this item successfully.
 									</div>
 								</h:panelGroup>
 								<!--begin: Datatable -->
@@ -135,22 +135,22 @@
 										#{article.code}
 									</h:column>
 									<h:column>
-										<f:facet name="header">Nom</f:facet>
+										<f:facet name="header">Name</f:facet>
 										<h:inputText value="#{listeArticlesAction.editArticle.nom}" rendered="#{article.editable}" />
 										<h:outputText value="#{article.nom}" rendered="#{not article.editable}" />
 									</h:column>
 									<h:column>
-										<f:facet name="header">Déscription</f:facet>
+										<f:facet name="header">Description</f:facet>
 										<h:inputText value="#{listeArticlesAction.editArticle.description}" rendered="#{article.editable}" />
 										<h:outputText value="#{article.description}" rendered="#{not article.editable}" />
 									</h:column>
 									<h:column>
-										<f:facet name="header">Prix(DH)</f:facet>
+										<f:facet name="header">Price(MAD)</f:facet>
 										<h:inputText value="#{listeArticlesAction.editArticle.prix}" rendered="#{article.editable}" />
 										<h:outputText value="#{article.prix}" rendered="#{not article.editable}" />
 									</h:column>
 									<h:column>
-										<f:facet name="header"  style="text-align:center;">Modifier</f:facet>
+										<f:facet name="header"  style="text-align:center;">Modify</f:facet>
 										<h:commandLink styleClass="btn btn-warning m-btn m-btn--icon btn-sm m-btn--icon-only" rendered="#{not article.editable}"
 										 action="#{listeArticlesAction.modifierArticle}">
 											<i class="la la-edit"></i>
@@ -165,7 +165,7 @@
 										</h:commandLink>
 									</h:column>
 									<h:column>
-										<f:facet name="header"> Supprimer</f:facet>
+										<f:facet name="header"> Delete</f:facet>
 										<h:commandLink styleClass="btn btn-danger m-btn m-btn--icon btn-sm m-btn--icon-only" onclick="return confirm('Voulez-vous vraiment supprimer cet article?');"
 										 action="#{listeArticlesAction.supprimerArticle}" rendered="#{not article.editable}" update=":liste_articles">
 											<i class="la la-trash-o"></i>
@@ -199,7 +199,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">
-						Modifier le produit
+						Modifiy the product
 					</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">
@@ -211,7 +211,7 @@
 
 					<div class="form-group">
 						<label for="edit_product_name" class="form-control-label">
-							Nom:
+							Name:
 						</label>
 						<h:inputText type="text" class="form-control" id="edit_product_name" value="#{listeArticlesAction.editArticle.nom}" autocomplete="off"
 						/>
@@ -225,7 +225,7 @@
 					</div>
 					<div class="form-group">
 						<label for="edit_product_price" class="form-control-label">
-							Prix(DH):
+							Price(MAD):
 						</label>
 						<h:inputText type="text" class="form-control m-input" id="edit_product_price" value="#{listeArticlesAction.editArticle.prix}"
 						 autocomplete="off" />
@@ -234,10 +234,10 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">
-						Annuler
+						Cancel
 					</button>
 					<button type="button" class="btn btn-primary">
-						Modifier
+						Modify
 					</button>
 				</div>
 			</div>
@@ -269,7 +269,7 @@
 		}
 
 		function confirmDelete() {
-			return confirm('Voulez vous vraiment supprimer ce produit?');
+			return confirm('Are you sure you want to delete the product?');
 		}
 	</script>
 	<script type="text/javascript" src="assets/demo/demo12/custom/crud/datatables/extensions/custom_datatable.js"></script>

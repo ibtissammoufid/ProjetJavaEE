@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>
-		Gestion Ventes | Login
+		Login
 	</title>
 	<meta name="description" content="Latest updates and statistic charts"></meta>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
@@ -47,16 +47,16 @@
 					<div class="m-login__signin">
 						<div class="m-login__head">
 							<h3 class="m-login__title">
-								Se Connecter
+								Login
 							</h3>
 						</div>
 						<h:panelGroup rendered="#{loginBean.loginSuccess}">
 							<div class="m-alert m-alert--outline alert alert-danger alert-dismissible fade show" role="alert">
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
 								<strong>
-									Erreur!
+									Error!
 								</strong>
-								Information incorrecte ou utilisateur Introuvable.
+								Incorrect informations or user not found.
 							</div>
 						</h:panelGroup>
 						<h:form id="loginForm" prependId="false" class="m-login__form m-form">
@@ -69,7 +69,7 @@
 							</div>
 							<div class="m-login__form-action">
 								<h:commandButton id="m_login_signin_submit" styleClass="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary"
-								 action="#{loginBean.loginAction}" value="Connexion">
+								 action="#{loginBean.loginAction}" value="Login">
 								</h:commandButton>
 							</div>
 						</h:form>
